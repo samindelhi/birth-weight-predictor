@@ -46,7 +46,7 @@ def get_prediction():
     # Loading the Pickle file - Deserializing the trained model using pickle.load(<model.pkl>) 
     # print("current dir:", os.getcwd())
 
-    model_path = os.path.join(os.getcwd(), "model", "model.pkl")
+    model_path = os.path.join(os.getcwd(), "model.pkl")
 
 
     with open(model_path,"rb") as obj:
