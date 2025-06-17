@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Birth-Weight Prediction</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+    <script lang="javascript">
+    function clearForm() {
+        document.querySelector("form").reset();
+    }
+    </script>
+    <style>
+
+        body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    background: rgb(231, 238, 240);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 15px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #007bff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 0px solid #007bff;
+    text-shadow: black;
+    padding: 10px 0px 10px 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="container" id="formdiv">
+        <h2>Baby Birth-Weight Prediction Form</h1>
+        <form action="/predict" method="POST">
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Input</th>
+                </tr>
+                <tr>
+                    <td>Gestation (weeks)</td>
+                    <td><input name="gestation" type="number" required></td>
+                </tr>
+                <tr>
+                    <td>First Pregnancy?</td>
+                    <td><input name="parity" type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Mother's Age</td>
+                    <td><input name="age" type="number" required></td>
+                </tr>
+                <tr>
+                    <td>Height of Mother (cm)</td>
+                    <td><input name="height" type="number" required></td>
+                </tr>
+                <tr>
+                    <td>Weight of Mother (kg)</td>
+                    <td><input name="weight" type="number" required></td>
+                </tr>
+                <tr>
+                    <td>Is Mother a Smoker?</td>
+                    <td><input name="smoke" type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td  style="text-align: center;">
+                        <button type="submit">Predict Birth-Weight</button>
+                    </td>
+                    <td  style="text-align: center;">
+                        <button type="button" onclick="clearForm()">Clear</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <details>
+            <summary style="color: #e28317;">Prediction: {{prediction}}</summary>
+            <p>Further analysis or additional insights can go here.</p>
+        </details>
+
+        
+    </div>
+</body>
+</html>
