@@ -13,7 +13,7 @@ def get_cleaned_data(fd):
     age = float(fd["age"])
     height = float(fd["height"])
     weight = float(fd["weight"])
-    smoke = 1 if fd["smoke"] else 0
+    smoke = 1 if fd["smoke"]=='on' else 0
     
     cleaned_data = {
             "gestation": [ges],
@@ -22,7 +22,6 @@ def get_cleaned_data(fd):
             "height":[height],
             "weight": [weight],
             "smoke":[smoke]
-    
     }
     print(cleaned_data)
     return cleaned_data
